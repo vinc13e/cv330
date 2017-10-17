@@ -1,5 +1,5 @@
 
-    std::cout << "OpenCV version: "
+//    std::cout << "OpenCV version: "
 //              << CV_MAJOR_VERSION << "."
 //              << CV_MINOR_VERSION << "."
 //              << CV_SUBMINOR_VERSION
@@ -21,11 +21,11 @@
 Sample of using OpenCV dnn module with Tensorflow Inception model.
 */
 
-#include <opencv2/dnn_modern.hpp>
+#include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 using namespace cv;
-using namespace cv::dnn2;
+using namespace cv::dnn;
 
 #include <fstream>
 #include <iostream>
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
     String resultFile = parser.get<String>("result");
 
     //! [Initialize network]
-    dnn2::Net net = readNetFromTensorflow(modelFile);
+    dnn::Net net = readNetFromTensorflow(modelFile);
     //! [Initialize network]
 
     if (net.empty())
