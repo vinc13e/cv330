@@ -108,7 +108,7 @@ int main(int argc, char **argv)
 
     //! [Make forward pass]
     Mat result = net.forward(outBlobName);                          //compute output
-    //! [Make forward pass]
+    //! [Make forward pass
 
     tm.stop();
 
@@ -170,3 +170,5 @@ std::vector<String> readClassNames(const char *filename)
     fp.close();
     return classNames;
 }
+
+//./cv330 -m=../data/tensorflow_inception_graph.pb  -i=/home/vmachado/Pictures/cat2.jpg -i_blob="" -o_blob="" -c=../data/imagenet_comp_graph_label_strings.txt
