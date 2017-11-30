@@ -33,7 +33,7 @@ using namespace cv::dnn;
 
 using namespace std;
 
-const String keys =
+static const String keys =
         "{help h    || Sample app for loading Inception TensorFlow model. "
                 "The model and class names list can be downloaded here: "
                 "https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip }"
@@ -45,10 +45,10 @@ const String keys =
                 "{result r  || path to save output blob (optional, binary format, NCHW order) }"
 ;
 
-void getMaxClass(const Mat &probBlob, int *classId, double *classProb);
+static void getMaxClass(const Mat &probBlob, int *classId, double *classProb);
 std::vector<String> readClassNames(const char *filename);
 
-int main(int argc, char **argv)
+int _main(int argc, char **argv)
 {
     cv::CommandLineParser parser(argc, argv, keys);
 
